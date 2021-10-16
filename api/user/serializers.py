@@ -11,7 +11,27 @@ class UserSerializer(serializers.Serializer):
 
     username = serializers.CharField(max_length=50)
     email = serializers.EmailField()
-    password = serializers.CharField(max_length=20)
+    password = serializers.CharField(max_length=50)
+    first_name = serializers.CharField(max_length=100)
+    last_name = serializers.CharField(max_length=100)
+    phone_number = serializers.CharField(max_length=100)
+    birth_day = serializers.DateField()
+    is_man = serializers.BooleanField()
+    lives_in_spain = serializers.BooleanField()
+    code_post = serializers.CharField(max_length=100)
+    province = serializers.CharField(max_length=100)
+    town = serializers.CharField(max_length=100)
+    is_employed = serializers.BooleanField()
+    company = serializers.CharField(max_length=100)
+    position = serializers.CharField(max_length=100)
+    date_employed = serializers.DateField()
+    has_been_employed = serializers.BooleanField(default=False)
+    accept_notifications = serializers.BooleanField()
+    accept_terms = serializers.BooleanField()
+    has_studies = serializers.BooleanField()
+    studies_qualification = serializers.CharField(max_length=100)
+    studies_speciality = serializers.CharField(max_length=100)
+    studies_center = serializers.CharField(max_length=100)
 
     def validate_username(self, value):
         try:

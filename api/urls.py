@@ -7,4 +7,6 @@ urlpatterns = [
     path('user/', include('api.user.urls')),
     path('opinion/', include('api.opinion.urls')),
     path('subscription/', include('api.subscription.urls')),
+    path('emailconfirmation/', include('api.emailconfirmation.urls')),
+
 ]

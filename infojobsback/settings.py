@@ -26,7 +26,7 @@ SECRET_KEY = 'u&v-ntgu=8)*x@c&1d3v#zpj4jt)!cl6k6!v13n#ma!u)qsfrt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['a8ad-2a0c-5a81-4101-e00-bd00-b281-46a2-d679.ngrok.io', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'api.user',
     'api.opinion',
     'api.subscription',
+    'api.emailconfirmation'
 
 ]
 
@@ -146,3 +147,12 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ]
 }
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST ='smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'automaticemaildjango@gmail.com'
+EMAIL_HOST_PASSWORD ='lufepama31'

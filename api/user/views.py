@@ -15,9 +15,11 @@ from .models import User
 @permission_classes([AllowAny])
 def create_user(request, *args, **kwargs):
     user_data = request.data
+    print(user_data)
     new_user_serializer = UserSerializer(data=user_data, context=user_data)
 
     if new_user_serializer.is_valid():
+        print('entree')
         new_user_serializer.save()
         return Response({'success': 'Cuenta creada satisfactoriamente'}, status=status.HTTP_201_CREATED)
     else:
